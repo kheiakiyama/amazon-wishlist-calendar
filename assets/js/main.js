@@ -147,6 +147,7 @@
 			var apigClient = apigClientFactory.newClient({
 					apiKey: '198atKkiG67jcTb63sEcz2tLu3ZmtOKXdLXQrOU9'
 			});
+			var clipboard = null;
 			var $send = $('#send');
 			$send.click(function () {
 				$send.prop("disabled", true);
@@ -154,8 +155,12 @@
 				apigClient.rootPut({}, { wishlistId: $('#wishlistId').val() }, {})
 						.then(function(result){
 							console.log(result);
-							$("#ical").text(result.data.ical);
-							$("#rss").text(result.data.rss);
+							$("#ical").attr("value", result.data.ical);
+							$("#rss").attr("value", result.data.rss);
+							if (clipboard !== null) {
+								clipboard.destroy();
+							}
+							clipboard = new Clipboard('#ical-copy,#rss-copy');
 							$send.prop("disabled", false);
 							$send.attr("value", "送信");
 						}).catch( function(result){

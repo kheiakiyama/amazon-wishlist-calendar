@@ -65,11 +65,13 @@
 					<input type="button" id="send" value="送信" />
 					<div>
 						<label>iCal:</label>
-						<span id="ical"></span>
+						<input type="text" id="ical" value="https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1" />
+						<button id="ical-copy" class="btn icon fa-clipboard" data-clipboard-target="#ical"></button>
 					</div>
 					<div>
 						<label>RSS:</label>
-						<span id="rss"></span>
+						<input type="text" id="rss" value="https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1" />
+						<button id="rss-copy" class="btn icon fa-clipboard" data-clipboard-target="#rss"></button>
 					</div>
 					<footer>
 						<a href="#third" class="button style3 scrolly">次へ</a>
@@ -283,7 +285,8 @@
 		</section>
 
 		<!-- Scripts -->
-		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.13.min.js"></script>
+			<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.13.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
