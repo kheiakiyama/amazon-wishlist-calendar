@@ -150,17 +150,24 @@
 			var clipboard = null;
 			var $send = $('#send');
 			$send.click(function () {
+				$("#api-failed").removeClass("display");
 				$send.prop("disabled", true);
 				$send.attr("value", "送信中...");
 				apigClient.rootPut({}, { wishlistId: $('#wishlistId').val() }, {})
 						.then(function(result){
 							console.log(result);
-							$("#ical").attr("value", result.data.ical);
-							$("#rss").attr("value", result.data.rss);
-							if (clipboard !== null) {
-								clipboard.destroy();
+							if (result.data.error) {
+								$("#api-failed").addClass("display");
+								$("#ical").attr("value", "");
+								$("#rss").attr("value", "");
+							} else {
+								$("#ical").attr("value", result.data.ical);
+								$("#rss").attr("value", result.data.rss);
+								if (clipboard !== null) {
+									clipboard.destroy();
+								}
+								clipboard = new Clipboard('#ical-copy,#rss-copy');
 							}
-							clipboard = new Clipboard('#ical-copy,#rss-copy');
 							$send.prop("disabled", false);
 							$send.attr("value", "送信");
 						}).catch( function(result){

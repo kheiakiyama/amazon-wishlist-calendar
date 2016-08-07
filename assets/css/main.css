@@ -2552,3 +2552,13 @@
 	footer a.button {
 		margin-top: 1em;
 	}
+
+	#api-failed {
+		margin-left: 1em;
+		display: none;
+		color: red;
+	}
+
+	#api-failed.display {
+		display: inline-block;
+	}

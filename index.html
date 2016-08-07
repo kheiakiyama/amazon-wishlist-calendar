@@ -63,14 +63,15 @@
 					</p>
 					<input type="text" id="wishlistId" value="" />
 					<input type="button" id="send" value="送信" />
+					<span id="api-failed" class="">無効な wishlistId です</span>
 					<div>
 						<label>iCal:</label>
-						<input type="text" id="ical" value="https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1" />
+						<input type="text" id="ical" value="" />
 						<button id="ical-copy" class="btn icon fa-clipboard" data-clipboard-target="#ical"></button>
 					</div>
 					<div>
 						<label>RSS:</label>
-						<input type="text" id="rss" value="https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1" />
+						<input type="text" id="rss" value="" />
 						<button id="rss-copy" class="btn icon fa-clipboard" data-clipboard-target="#rss"></button>
 					</div>
 					<footer>
