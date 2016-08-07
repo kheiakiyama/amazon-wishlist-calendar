@@ -31,8 +31,9 @@
 				<header>
 					<h2>This is Amazon Wishlist Calendar</h2>
 				</header>
-				<p>公開されたウィッシュリストから iCal および RSS フィードを作成します<br />
-				一度作成した iCal と RSS フィードはウィッシュリストが更新されれば自動的に更新されます</p>
+				<p>公開された Amazon のほしい物リストに含まれる商品の発売日予定を出力します<br />
+				対応している形式は iCal および RSS フィードです<br />
+				一度作成すればほしい物リストが更新されれば自動的に更新されます</p>
 				<footer>
 					<a href="#first" class="button style2 scrolly">試す</a>
 				</footer>
@@ -45,11 +46,14 @@
 						<h2>Amazon でほしい物リストを確認する</h2>
 					</header>
 					<p><a href="https://www.amazon.co.jp/gp/registry/wishlist/" target="_blank">Amazon のほしい物リスト</a> を開いて利用したいリストをクリックします</p>
+					<footer>
+						<a href="#second" class="button style3 scrolly">次へ</a>
+					</footer>
 				</div>
 			</article>
 
 		<!-- Feature 2 -->
-			<article class="container box style1">
+			<article id="second" class="container box style1">
 				<div class="inner">
 					<header>
 						<h2>ほしい物リストの Id を送信する</h2>
@@ -67,11 +71,14 @@
 						<label>RSS:</label>
 						<span id="rss"></span>
 					</div>
+					<footer>
+						<a href="#third" class="button style3 scrolly">次へ</a>
+					</footer>
 				</div>
 			</article>
 
 		<!-- Feature 3 -->
-			<article class="container box style1">
+			<article id="third" class="container box style1">
 				<div class="inner">
 					<header>
 						<h2>iCal と RSS フィードを登録する</h2>
@@ -93,6 +100,9 @@
 							<li><a href="https://feedly.com" target="_blank">Feedly</a> で登録する</li>
 						</ul>
 					</section>
+					<footer>
+						<a href="#share" class="button style3 scrolly">シェアする</a>
+					</footer>
 				</div>
 			</article>
 
@@ -253,8 +263,7 @@
 			</article>
 		-->
 
-		<article class="container box style3">
-			<p>シェアする</p>
+		<article id="share" class="container box style3">
 			<ul class="icons">
 				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>

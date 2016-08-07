@@ -2544,3 +2544,11 @@
 	#ical, #rss {
 		word-break: break-all;
 	}
+
+	.container footer {
+		text-align: center;
+	}
+
+	footer a.button {
+		margin-top: 1em;
+	}
