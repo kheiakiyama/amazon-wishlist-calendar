@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Overflow by HTML5 UP</title>
+		<title>Amazon Wishlist Calendar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -18,94 +18,76 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<h1>Overflow</h1>
-					<p>By HTML5 UP</p>
+					<h1>Amazon Wishlist Calendar</h1>
+					<p>By kheiakiyama</p>
 				</header>
 				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">Proceed as anticipated</a>
+					<a href="#banner" class="button style2 scrolly-middle">show more</a>
 				</footer>
 			</section>
 
 		<!-- Banner -->
 			<section id="banner">
 				<header>
-					<h2>This is Overflow</h2>
+					<h2>This is Amazon Wishlist Calendar</h2>
 				</header>
-				<p>A brand new site template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>.<br />
-				It’s fully responsive, built on <strong>skel</strong>, and of course entirely free<br />
-				under the <a href="http://html5up.net/license">Creative Commons license</a>.</p>
+				<p>公開されたウィッシュリストから iCal および RSS フィードを作成します<br />
+				一度作成した iCal と RSS フィードはウィッシュリストが更新されれば自動的に更新されます</p>
 				<footer>
-					<a href="#first" class="button style2 scrolly">Act on this message</a>
+					<a href="#first" class="button style2 scrolly">試す</a>
 				</footer>
 			</section>
 
 		<!-- Feature 1 -->
-			<article id="first" class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+			<article id="first" class="container box style1">
 				<div class="inner">
 					<header>
-						<h2>Lorem ipsum<br />
-						dolor sit amet</h2>
+						<h2>Amazon でほしい物リストを確認する</h2>
 					</header>
-					<p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
+					<p><a href="https://www.amazon.co.jp/gp/registry/wishlist/" target="_blank">Amazon のほしい物リスト</a> を開いて利用したいリストをクリックします</p>
 				</div>
 			</article>
 
 		<!-- Feature 2 -->
-			<article class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+			<article class="container box style1">
 				<div class="inner">
 					<header>
-						<h2>Mollis posuere<br />
-						lectus lacus</h2>
+						<h2>ほしい物リストの Id を送信する</h2>
 					</header>
-					<p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
+					<p>https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1?<br>
+					上のような URL から wishlistId を抜き出し入力し、送信してください。
+					</p>
+					<input type="text" id="wishlistId" />
+					<input type="button" id="send" value="送信" />
 				</div>
 			</article>
 
-		<!-- Portfolio -->
-			<article class="container box style2">
-				<header>
-					<h2>Magnis parturient</h2>
-					<p>Justo phasellus et aenean dignissim<br />
-					placerat cubilia purus lectus.</p>
-				</header>
-				<div class="inner gallery">
-					<div class="row 0%">
-						<div class="3u 12u(mobile)"><a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" /></a></div>
-					</div>
-					<div class="row 0%">
-						<div class="3u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
-						<div class="3u 12u(mobile)"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
-					</div>
+		<!-- Feature 3 -->
+			<article class="container box style1">
+				<div class="inner">
+					<header>
+						<h2>iCal と RSS フィードを登録する</h2>
+					</header>
+					<section>
+						<header>
+							<h3>iCal</h3>
+							<p id="ical"></p>
+						</header>
+						<ul class="default">
+							<li>Google カレンダーへの登録は <a href="https://support.google.com/calendar/answer/37118?hl=ja" target="_blank">こちら</a> を参照ください</li>
+							<li>iCloud カレンダーへの登録は <a href="https://support.apple.com/ja-jp/HT202361" target="_blank">こちら</a> を参照ください</li>
+						</ul>
+					</section>
+					<section>
+						<header>
+							<h3>RSS</h3>
+							<p id="rss"></p>
+						</header>
+						<ul class="default">
+							<li><a href="https://feedly.com" target="_blank">Feedly</a> で登録する</li>
+						</ul>
+					</section>
 				</div>
-			</article>
-
-		<!-- Contact -->
-			<article class="container box style3">
-				<header>
-					<h2>Nisl sed ultricies</h2>
-					<p>Diam dignissim lectus eu ornare volutpat orci.</p>
-				</header>
-				<form method="post" action="#">
-					<div class="row 50%">
-						<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
-						<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
-						<div class="12u$">
-							<textarea name="message" placeholder="Message"></textarea>
-						</div>
-						<div class="12u$">
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</div>
-					</div>
-				</form>
 			</article>
 
 		<!-- Generic -->
@@ -265,7 +247,8 @@
 			</article>
 		-->
 
-		<section id="footer">
+		<article class="container box style3">
+			<p>シェアする</p>
 			<ul class="icons">
 				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -274,9 +257,12 @@
 				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 				<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 			</ul>
+		</article>
+
+		<section id="footer">
 			<div class="copyright">
 				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>created by <a href="https://twitter.com/kheiakiyama" target="_blank">@kheiakiyama</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
 		</section>
