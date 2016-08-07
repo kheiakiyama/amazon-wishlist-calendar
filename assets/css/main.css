@@ -2531,3 +2531,16 @@
 			}
 
 	}
+
+	#send {
+		padding: 0.3em 2em 0.3em 2em;
+    margin-left: 2em;
+	}
+
+	#send:disabled {
+		background-color: buttonface;
+	}
+
+	#ical, #rss {
+		word-break: break-all;
+	}

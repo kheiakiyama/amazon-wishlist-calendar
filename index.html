@@ -57,8 +57,16 @@
 					<p>https://www.amazon.co.jp/gp/registry/wishlist/{wishlistId}/ref=cm_wl_list_o_1?<br>
 					上のような URL から wishlistId を抜き出し入力し、送信してください。
 					</p>
-					<input type="text" id="wishlistId" />
+					<input type="text" id="wishlistId" value="" />
 					<input type="button" id="send" value="送信" />
+					<div>
+						<label>iCal:</label>
+						<span id="ical"></span>
+					</div>
+					<div>
+						<label>RSS:</label>
+						<span id="rss"></span>
+					</div>
 				</div>
 			</article>
 
@@ -71,7 +79,6 @@
 					<section>
 						<header>
 							<h3>iCal</h3>
-							<p id="ical"></p>
 						</header>
 						<ul class="default">
 							<li>Google カレンダーへの登録は <a href="https://support.google.com/calendar/answer/37118?hl=ja" target="_blank">こちら</a> を参照ください</li>
@@ -81,7 +88,6 @@
 					<section>
 						<header>
 							<h3>RSS</h3>
-							<p id="rss"></p>
 						</header>
 						<ul class="default">
 							<li><a href="https://feedly.com" target="_blank">Feedly</a> で登録する</li>
@@ -268,11 +274,24 @@
 		</section>
 
 		<!-- Scripts -->
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.13.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+			<script type="text/javascript" src="assets/apiGateway-js-sdk/apigClient.js"></script>
+
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 

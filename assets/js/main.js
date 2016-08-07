@@ -144,19 +144,26 @@
 
 			}
 
-		// Poptrox.
-			$('.gallery').poptrox({
-				useBodyOverflow: false,
-				usePopupEasyClose: false,
-				overlayColor: '#0a1919',
-				overlayOpacity: (skel.vars.IEVersion < 9 ? 0 : 0.75),
-				usePopupDefaultStyling: false,
-				usePopupCaption: true,
-				popupLoaderText: '',
-				windowMargin: 10,
-				usePopupNav: true
+			var apigClient = apigClientFactory.newClient({
+					apiKey: '198atKkiG67jcTb63sEcz2tLu3ZmtOKXdLXQrOU9'
 			});
-
+			var $send = $('#send');
+			$send.click(function () {
+				$send.prop("disabled", true);
+				$send.attr("value", "送信中...");
+				apigClient.rootPut({}, { wishlistId: $('#wishlistId').val() }, {})
+						.then(function(result){
+							console.log(result);
+							$("#ical").text(result.data.ical);
+							$("#rss").text(result.data.rss);
+							$send.prop("disabled", false);
+							$send.attr("value", "送信");
+						}).catch( function(result){
+							console.log(result);
+							$send.prop("disabled", false);
+							$send.attr("value", "送信");
+						});
+			});
 	});
 
 })(jQuery);
