@@ -145,7 +145,7 @@
 			}
 
 			var apigClient = apigClientFactory.newClient({
-					apiKey: '198atKkiG67jcTb63sEcz2tLu3ZmtOKXdLXQrOU9'
+					apiKey: 'FKzd4vdTgS8qNoubAGLKz6YcX0i9xVpO8liJgfG2'
 			});
 			var clipboard = null;
 			var $send = $('#send');
